@@ -56,31 +56,3 @@ open up you local host and port
 ## MLflow
 
 [Documentation](https://mlflow.org/docs/latest/index.html)
-
-
-##### cmd
-- mlflow ui
-
-### dagshub
-[dagshub](https://dagshub.com/)
-
-import dagshub
-dagshub.init(repo_owner='parthdeshmukh0504', repo_name='end_to_end_mlflow_project', mlflow=True)
-
-import mlflow
-with mlflow.start_run():
-  mlflow.log_param('parameter name', 'value')
-  mlflow.log_metric('metric name', 1)
-
-
-Run this to export as env variables:
-
-```bash
-
-export MLFLOW_TRACKING_URI=https://dagshub.com/parthdeshmukh0504/end_to_end_mlflow_project.mlflow
-
-export MLFLOW_TRACKING_USERNAME=parthdeshmukh0504 
-
-export MLFLOW_TRACKING_PASSWORD=d45615a048bb8f72fd3e758203721f6a117b8c9f
-
-```
