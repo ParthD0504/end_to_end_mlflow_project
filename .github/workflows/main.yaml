@@ -80,6 +80,11 @@ jobs:
       - name: Pull latest images
         run: |
           docker pull ${{secrets.AWS_ECR_LOGIN_URI}}/${{secrets.ECR_REPOSITORY_NAME}}:latest
+      
+      - name: Clean previous container and image (safe)
+        run: |
+          docker rm -f ml_project || true
+          docker rmi -f ${{secrets.AWS_ECR_LOGIN_URI}}/${{secrets.ECR_REPOSITORY_NAME}}:latest || true
 
       - name: Run Docker Image to serve users
         run: |
